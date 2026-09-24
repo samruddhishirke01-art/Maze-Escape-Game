@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Maze Escape</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="game-container">
+
+        <h1>🧩 Maze Escape</h1>
+
+        <p class="subtitle">
+            Find your way to the exit!
+        </p>
+
+        <!-- Game information -->
+
+        <div class="info">
+
+            <div class="info-box">
+                <span>⏱️ Time</span>
+                <strong id="timer">0</strong>
+            </div>
+
+            <div class="info-box">
+                <span>👣 Moves</span>
+                <strong id="moves">0</strong>
+            </div>
+
+            <div class="info-box">
+                <span>⭐ Score</span>
+                <strong id="score">1000</strong>
+            </div>
+
+        </div>
+
+
+        <!-- Maze -->
+
+        <div id="maze">
+
+            {% for row in maze %}
+
+                {% for cell in row %}
+
+                    {% if loop.index0 == 0 and loop.index == 1 %}
+
+                        <div class="cell start">
+                            🟢
+                        </div>
+
+                    {% elif cell == 1 %}
+
+                        <div class="cell wall"></div>
+
+                    {% else %}
+
+                        <div class="cell path"></div>
+
+                    {% endif %}
+
+                {% endfor %}
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Controls -->
+
+        <div class="controls">
+
+            <button id="up">⬆️</button>
+
+            <div>
+
+                <button id="left">⬅️</button>
+
+                <button id="down">⬇️</button>
+
+                <button id="right">➡️</button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Action buttons -->
+
+        <div class="actions">
+
+            <button id="findPath">
+                🧠 Find Shortest Path
+            </button>
+
+            <button id="restart">
+                🔄 Restart
+            </button>
+
+        </div>
+
+
+        <!-- Message -->
+
+        <div id="message">
+            Use the arrow buttons or keyboard arrows to move.
+        </div>
+
+
+        <!-- DSA information -->
+
+        <div class="dsa-box">
+
+            <h3>🧠 DSA Used</h3>
+
+            <p>
+                <strong>Algorithm:</strong>
+                Breadth-First Search (BFS)
+            </p>
+
+            <p>
+                <strong>Data Structure:</strong>
+                Queue
+            </p>
+
+            <p>
+                BFS finds the shortest path from the
+                starting point to the exit.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="{{ url_for('static',
+                    filename='script.js') }}">
+    </script>
+
+</body>
+
+</html>

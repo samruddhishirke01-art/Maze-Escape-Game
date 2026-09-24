@@ -1,0 +1,289 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #141e30,
+            #243b55
+        );
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: white;
+
+    padding: 20px;
+}
+
+
+.game-container {
+    width: 100%;
+    max-width: 650px;
+
+    background: #182536;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+
+h1 {
+    font-size: 38px;
+
+    margin-bottom: 8px;
+}
+
+
+.subtitle {
+    color: #b8c4d4;
+
+    margin-bottom: 25px;
+}
+
+
+/* Information boxes */
+
+.info {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+
+.info-box {
+    background: #24364d;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    flex: 1;
+}
+
+
+.info-box span {
+    display: block;
+
+    color: #aebbd0;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+
+.info-box strong {
+    font-size: 22px;
+}
+
+
+/* Maze */
+
+#maze {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 5px;
+
+    max-width: 420px;
+
+    margin: auto;
+
+    background: #0e1722;
+
+    padding: 8px;
+
+    border-radius: 12px;
+}
+
+
+.cell {
+    aspect-ratio: 1;
+
+    border-radius: 6px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+
+.wall {
+    background: #374151;
+}
+
+
+.path {
+    background: #dbeafe;
+}
+
+
+.player {
+    background: #60a5fa;
+
+    box-shadow:
+        0 0 15px #60a5fa;
+}
+
+
+.exit {
+    background: #86efac;
+}
+
+
+.shortest {
+    background: #facc15 !important;
+}
+
+
+/* Controls */
+
+.controls {
+    margin-top: 25px;
+}
+
+
+.controls button,
+.actions button {
+
+    border: none;
+
+    cursor: pointer;
+
+    border-radius: 10px;
+
+    padding: 12px 18px;
+
+    margin: 4px;
+
+    font-size: 18px;
+
+    background: #334155;
+
+    color: white;
+
+    transition: 0.2s;
+}
+
+
+.controls button:hover,
+.actions button:hover {
+
+    transform: scale(1.05);
+
+    background: #475569;
+}
+
+
+.actions {
+    margin-top: 15px;
+}
+
+
+.actions button:first-child {
+
+    background: #2563eb;
+}
+
+
+.actions button:last-child {
+
+    background: #dc2626;
+}
+
+
+/* Message */
+
+#message {
+
+    margin-top: 20px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: #24364d;
+
+    color: #dbeafe;
+}
+
+
+/* DSA box */
+
+.dsa-box {
+
+    margin-top: 25px;
+
+    text-align: left;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: #101a28;
+
+    border-left: 4px solid #3b82f6;
+}
+
+
+.dsa-box h3 {
+
+    margin-bottom: 10px;
+}
+
+
+.dsa-box p {
+
+    margin: 7px 0;
+
+    color: #cbd5e1;
+
+    line-height: 1.5;
+}
+
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    .game-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .cell {
+        font-size: 16px;
+    }
+
+}
